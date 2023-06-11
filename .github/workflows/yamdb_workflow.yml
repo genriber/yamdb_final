@@ -1,4 +1,4 @@
-name: Django-app workflow
+name: Django-app yamdb workflow
 
 on: [push]
 
@@ -11,7 +11,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
+        python-version: 3.7
 
     - name: Install dependencies
       run: |
@@ -27,12 +27,8 @@ jobs:
 
     - name: Test with flake8 and django tests
       run: |
-        # запуск проверки проекта по flake8
         python -m flake8
-        # перейти в папку, содержащую manage.py — 
-        #<корневая_папка_infra_actions>/<папка_проекта>/manage.py
-        cd infra_project/
-        # запустить написанные разработчиком тесты
+        cd api_yamdb/
         python manage.py test
 
   build_and_push_to_docker_hub:
@@ -70,11 +66,8 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          # Выполняет pull образа с DockerHub
-          sudo docker pull genriber/yamdb_final
-          #остановка всех контейнеров
-          sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 genriber/yamdb_final
+          sudo docker-compose down -v 
+          sudo docker-compose up -d
   
   send_message:
     runs-on: ubuntu-latest
