@@ -1,3 +1,3 @@
 # yamdb_final
 yamdb_final
-![yamdb_final workflow](https://github.com/genriber/yamdb_final/actions/workflows/main.yml/badge.svg)
+![yamdb_final workflow](https://github.com/genriber/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
