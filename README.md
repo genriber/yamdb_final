@@ -1,7 +1,7 @@
 # yamdb_final
 ![yamdb_final workflow](https://github.com/genriber/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 ## Основан на API_YAMDB
-Проект развернут по следующему адресу: 51.250.106.255
+Проект развернут по следующему адресу: ymdb-gnrbrprakt.ddns.net
 
 
 ### **Проект выполнен в рамках обучения в YandexPracticum.**
